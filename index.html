@@ -55,9 +55,13 @@ async function enviar() {
     }
 
     await fetch("https://script.google.com/macros/s/AKfycbyhtAmTndXYjL15YFllyhbuuXuUsh0N-AIC2aBc_HGSKzRRM8LqIfPRU7wJvjp2Z_BE3w/exec", {
-        method: "POST",
-        body: JSON.stringify({ nombre, tipo, peticion })
-    });
+    method: "POST",
+    headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({ nombre, tipo, peticion })
+});
+
 
     alert("Petición enviada 🙏");
 
